@@ -1,0 +1,149 @@
+@import 'tailwindcss' layer(utilities);
+@import 'tailwindcss/utilities' layer(utilities);
+
+@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------- Variables ---------- */
+:root {
+  /* Colors */
+  --color-bg: #ffffff;
+  --color-body: #211f1f;
+  --color-header: #2b56f0;
+  --color-primary: #2b56f0;
+  --color-primary-hover: #1d3fc7;
+  --color-red: #ef4444;
+  --color-red-hover: #dc2626;
+  --color-yellow-bg: #fef3c7;
+  --color-yellow-text: #78350f;
+
+  /* Fonts */
+  --font-main: 'Aptos', sans-serif;
+
+  /* Font sizes */
+  --font-size-title: 1.25rem; /* 20px */
+  --font-size-body: 1rem; /* 16px */
+  --font-size-small: 0.875rem; /* 14px */
+}
+
+/* ---------- Global styles ---------- */
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-body);
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Typography ---------- */
+.text-header {
+  color: var(--color-header);
+  font-family: var(--font-main);
+}
+
+.text-body {
+  color: var(--color-body);
+  font-family: var(--font-main);
+}
+
+/* ---------- Header ---------- */
+.header {
+  @apply flex items-center justify-between bg-white px-6 py-4 shadow-md;
+}
+
+.header-logo {
+  @apply flex cursor-pointer items-center text-2xl font-bold;
+  color: var(--color-header);
+}
+
+.header-nav {
+  @apply space-x-4;
+}
+
+.header-text {
+  color: var(--color-body);
+}
+
+.header-button {
+  @apply rounded px-4 py-1 text-white;
+}
+
+.header-button-login {
+  background-color: var(--color-primary);
+}
+.header-button-login:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.header-button-signup {
+  background-color: var(--color-primary);
+}
+.header-button-signup:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.header-button-logout {
+  background-color: var(--color-red);
+}
+.header-button-logout:hover {
+  background-color: var(--color-red-hover);
+}
+
+/* ---------- Form container ---------- */
+.form-container {
+  @apply w-80 rounded-2xl p-8 shadow-md;
+  background-color: var(--color-bg);
+}
+
+/* ---------- Page wrapper ---------- */
+.page-wrapper {
+  @apply flex h-screen items-center justify-center;
+}
+
+/* ---------- Inputs ---------- */
+.input-base {
+  @apply mb-4 w-full rounded border p-2;
+}
+
+.input-password {
+  @apply mb-6 w-full rounded border p-2;
+}
+
+.input-mfa {
+  @apply mb-6 w-full rounded border p-2 text-center tracking-widest;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  @apply w-full rounded py-2 text-white;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.btn-loading {
+  @apply bg-blue-400;
+}
+
+/* ---------- Alerts ---------- */
+.alert-error {
+  @apply mb-4 text-center text-red-600;
+}
+
+.alert-mfa {
+  @apply mb-4 rounded p-2 text-center text-sm;
+  background-color: var(--color-yellow-bg);
+  color: var(--color-yellow-text);
+}
+
+/* ---------- Links ---------- */
+.link {
+  color: var(--color-primary);
+}
+.link:hover {
+  @apply underline;
+}
